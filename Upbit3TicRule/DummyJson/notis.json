@@ -1,0 +1,19 @@
+
+[
+    {
+        "market": "KRW-BTC",
+        "korean_name": "비트코인",
+        "english_name": "Bitcoin",
+        "notification_status": "buy",
+        "notification_date_time_utc": "2018-04-18T19:16:00",
+        "notification_price": 5000000
+    },
+    {
+        "market": "KRW-BTC",
+        "korean_name": "비트코인",
+        "english_name": "Bitcoin",
+        "notification_status": "sell",
+        "notification_date_time_utc": "2018-04-18T19:16:00",
+        "notification_price": 5000000
+    }
+]

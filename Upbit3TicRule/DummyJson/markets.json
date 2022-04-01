@@ -1,0 +1,27 @@
+
+[
+    {
+        "market": "KRW-BTC",
+        "korean_name": "비트코인",
+        "english_name": "Bitcoin",
+        "trade_price": 50000000,
+        "tick_count": 2,
+        "tick_variance_price": 200,
+        "tick_variance_percent": 0.5,
+        "trade_volume": 0.02467802,
+        "signed_change_rate": 0.0202366864,
+        "change": "FALL"
+    },
+    {
+        "market": "KRW-ETH",
+        "korean_name": "이더리움",
+        "english_name": "eth",
+        "trade_price": 39999,
+        "tick_count": 2,
+        "tick_variance_price": 200,
+        "tick_variance_percent": 0.5,
+        "trade_volume": 0.02467802,
+        "signed_change_rate": 0.0202366864,
+        "change": "RISE"
+    }
+]

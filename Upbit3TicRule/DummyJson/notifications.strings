@@ -1,0 +1,18 @@
+/* 
+  notifications.strings
+  Upbit3TicRule
+
+  Created by Taehoon Kim on 2022/03/15.
+  
+*/
+
+[
+    {
+        "market": "KRW-BTC",
+        "korean_name": "비트코인",
+        "english_name": "Bitcoin",
+                "notification_status": "매도 알림",
+                "notification_date_time_utc": "2018-04-18T19:16:00",
+                "notification_price": "5000000"
+    }
+]

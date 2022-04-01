@@ -1,0 +1,9 @@
+[
+    {
+        "market": "KRW-BTC",
+        "buy_price": 150000,
+        "sell_price": 100000,
+        "profit_percent": "-30.00",
+        "profit_price": 30000
+    }
+]

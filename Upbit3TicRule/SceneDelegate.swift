@@ -16,7 +16,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let scene = (scene as? UIWindowScene) else { return }
+        window = UIWindow(windowScene: scene)
+        window?.rootViewController = MainTabController()
+        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -29,6 +32,37 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidBecomeActive(_ scene: UIScene) {
         // Called when the scene has moved from an inactive state to an active state.
         // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
+        let center = UNUserNotificationCenter.current()
+        center.getDeliveredNotifications { (receivedNotifications) in
+            for notification in receivedNotifications {
+                let content = notification.request.content
+                let userInfo = notification.request.content.userInfo
+                print(" userInfo \(userInfo)")
+                print(content.userInfo as NSDictionary)
+                
+                if let market = userInfo["market"] as? String,
+                   let koreaName = userInfo["korean_name"] as? String,
+                   let englishName = userInfo["english_name"] as? String,
+                   let notificationStatus = userInfo["notification_status"] as? String,
+                   let notificationDateTimeUTC = userInfo["notification_date_time_utc"] as? String,
+                   let notificationPrice = userInfo["notification_price"] as? String {
+                    
+                    // sceneDidBecomeActive
+                    let noti = Noti(market: market, koreaName: koreaName, englishName: englishName, notificationStatus: notificationStatus, notificationDateTimeUTC: notificationDateTimeUTC, notificationPrice: notificationPrice)
+                    
+                    DispatchQueue.main.async {
+                        NotiService.shared.setNoti(noti: noti)
+                    }
+                }
+            }
+            DispatchQueue.main.async {
+                UIApplication.shared.applicationIconBadgeNumber = 0 // For Clear Badge Counts
+            }
+          
+            let center = UNUserNotificationCenter.current()
+            center.removeAllDeliveredNotifications() // To remove all delivered notifications
+            center.removeAllPendingNotificationRequests() // To remove all pending notifications which are not delivered yet but scheduled.
+        }
     }
 
     func sceneWillResignActive(_ scene: UIScene) {
