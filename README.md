@@ -49,7 +49,7 @@ Swift
 
 ### 시세**, 알람설정 페이지**
 
-![메인 알람 설정.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d9de3a89-1f98-421a-882c-0e7e9085da87/메인_알람_설정.png)
+![메인 알람 설정](https://user-images.githubusercontent.com/45157159/161238369-892e07ac-3831-41d3-8fba-e72d3151cab6.png)
 
 - SpringBoot에서 업비트 OpenAPI 가공해서 전달하였습니다.
 - 코인 정보를 FCM의 Topic을 이용하여 등록하였습니다.
@@ -58,7 +58,7 @@ Swift
 
 ### 알람 이력, 자산 목록
 
-![알람 이력.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ba183167-ff33-4327-9e63-5d2b029f25d1/알람_이력.png)
+![알람 이력](https://user-images.githubusercontent.com/45157159/161238407-b121702a-8c9e-4644-9b5e-02fd0caab7ed.png)
 
 - Upbit의 AccessKey와 SecretKey을 입력하면 자산 정보를 볼 수 있습니다.
 - 전달 받은 알람들을 볼 수 있습니다.
